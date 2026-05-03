@@ -3,18 +3,20 @@ import os
 
 from gpt import *
 from util import *
+text1 = """Лукабот приветствует!!
+
+Активные команды:
+__лука хуесос__
+
+Пока что всё, хз, че ещё придумать.
+
+Авторы:
+Алина
+Claude Haiku 4.5."""
 
 # тут будем писать наш код :)
 async def start(update, context):
-    await send_text(update, context, "
-    Лукабот приветствует!!
-Активные команды:
-__лука хуесос__
-пока что все хз че еще придумать, 
-авторы:
-Алина
-Claude Haiku 4.5. 
-")
+    await send_text(update, context, text1)
 
 async def hello(update, context):
     if (update.message.text=="лука хуесос"):
