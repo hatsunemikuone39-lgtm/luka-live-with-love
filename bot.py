@@ -1,7 +1,5 @@
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, CallbackQueryHandler, CommandHandler
 import os
-
-from gpt import *
 from util import *
 text1 = """Лукабот приветствует!!
 
