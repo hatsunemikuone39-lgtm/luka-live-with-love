@@ -30,7 +30,8 @@ async def hello(update, context):
 
 async def hello_button(update, context):
     if update.callback_query.data=="good_answer":
-        await send_text(update, context, "luka, live with love luka, live with love, luka live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love luka, live with love")
+        for i in range(20):
+            await send_text(update, context, "luka, live with love")
     else:
         await send_photo(update, context, "photo_1")
         await send_photo(update, context, "photo_2")
