@@ -1,6 +1,8 @@
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, CallbackQueryHandler, CommandHandler
 import os
 from util import *
+from datetime import datetime, timedelta, timezone
+
 text1 = """Лукабот приветствует!!
 
 Активные команды:
@@ -35,6 +37,12 @@ async def hello(update, context):
     elif (update.message.text=="я боюсь луку"):
         await send_photo(update, context, "photo_2026")
         await send_text(update, context, text2)
+    elif (update.message.text.isdigit()):
+        moscow_tz = timezone(timedelta(hours=3))
+        date1=datetime.now(moscow_tz)
+        date2=datetime(2026,2,4,tzinfo=moscow_tz)
+        tabl=timedelta(days=int(update.message.text))
+        await send_text(update, context, (((date1-date2)-tabl).days))
     else:
         await send_text(update, context, "luka, live with love")
         await send_photo(update, context, "photo_2025-12-07_20-39-57")
