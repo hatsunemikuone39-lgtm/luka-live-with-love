@@ -81,6 +81,7 @@ async def hello_button(update, context):
 
 app = ApplicationBuilder().token(os.environ.get("TELEGRAM_TOKEN")).build()
 app.add_handler(CommandHandler("start", start))
-app.add_handler(MessageHandler(filters.TEXT, hello))
+app.add_handler(MessageHandler(filters.TEXT | filters.Regex(r'^\d+$'), hello))
 app.add_handler(CallbackQueryHandler(hello_button))
 app.run_polling()
+
